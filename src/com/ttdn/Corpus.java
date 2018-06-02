@@ -11,7 +11,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *Văn bản
+ * Văn bản
+ *
  * @author Admin
  */
 
@@ -42,6 +43,13 @@ public class Corpus {
         invertedIndex = new HashMap<>();
 
         createInvertedIndex();
+/*
+        for (String name : invertedIndex.keySet()) {
+
+            String key = name;
+            Set<Document> value = invertedIndex.get(name);
+            System.out.println("invertedIndex : <" + key + "," + value + ">");
+       }*/ 
     }
 
     /**

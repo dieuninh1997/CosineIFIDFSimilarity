@@ -37,12 +37,12 @@ public class Document implements Comparable<Document> {
         this.filename = filename;
         termFrequency = new HashMap<>();
         readFileAndPreProcess();
-        for (String name : termFrequency.keySet()) {
+      /*  for (String name : termFrequency.keySet()) {
 
             String key = name;
             String value = termFrequency.get(name).toString();
             System.out.println("TermFrequency : <" + key + "," + value + ">");
-        }
+        }*/
     }
 
     /**
@@ -58,7 +58,9 @@ public class Document implements Comparable<Document> {
             System.out.println("Reading file: " + filename + " and preprocessing");
             while (in.hasNext()) {
                 String nextWord = in.next();
-                String filteredWord = nextWord.replaceAll("[^A-Za-zđĐáàảãạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵ0-9]", "").toLowerCase();
+                String filteredWord = nextWord.
+                        replaceAll("[^A-Za-zđĐáàảãạăắằẳẵặâấầẩẫậđéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵ0-9]", "").
+                        toLowerCase();
                 if (!(filteredWord.equalsIgnoreCase(""))) {
                     if (termFrequency.containsKey(filteredWord)) {
                         int oldCount = termFrequency.get(filteredWord);
